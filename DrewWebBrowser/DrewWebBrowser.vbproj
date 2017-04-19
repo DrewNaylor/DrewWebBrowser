@@ -109,12 +109,6 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backup.Designer.vb">
-      <DependentUpon>Backup.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Backup.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="BrowserAbout.Designer.vb">
       <DependentUpon>BrowserAbout.vb</DependentUpon>
     </Compile>
@@ -146,9 +140,6 @@
     <Compile Include="VB Code-behind\NewTabWorker.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Backup.resx">
-      <DependentUpon>Backup.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BrowserAbout.resx">
       <DependentUpon>BrowserAbout.vb</DependentUpon>
     </EmbeddedResource>

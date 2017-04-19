@@ -1,4 +1,26 @@
-﻿Public NotInheritable Class BrowserAbout
+﻿'Drew's Lightweight Browser - Browse the Web with a Lightweight Browser! (Not recommended for everyday use.)
+'Copyright (C) 2015-2017  Drew Naylor
+'(Note that the copyright years include the years left out by the hyphen.)
+'
+'This file is part of Drew's Lightweight Browser
+'(Program is also known as "DrewWebBrowser.")
+'
+'Drew's Lightweight Browser is free software: you can redistribute it and/or modify
+'it under the terms of the GNU General Public License as published by
+'the Free Software Foundation, either version 3 of the License, or
+'(at your option) any later version.
+'
+'Drew's Lightweight Browser is distributed in the hope that it will be useful,
+'but WITHOUT ANY WARRANTY; without even the implied warranty of
+'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'GNU General Public License for more details.
+'
+'You should have received a copy of the GNU General Public License
+'along with Drew's Lightweight Browser.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+Public NotInheritable Class BrowserAbout
 
     Private Sub BrowserAbout_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Set the title of the form.
