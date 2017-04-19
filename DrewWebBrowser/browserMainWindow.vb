@@ -26,13 +26,15 @@ Public Class browserMainWindow
     Private Sub goButton_Click(sender As System.Object, e As System.EventArgs) Handles goButton.Click
         ' This forum post helped me do this properly: 
         'http://forums.devx.com/showthread.php?151064-VB-Net-Tabcontrol-And-webbrowser-control/page3
-        NewTabWorker.browserNewBrowser.Navigate(urlBox.Text)
+
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.Navigate(urlBox.Text)
     End Sub
 
     ' Refresh button (Address Bar)
     Private Sub buttonReload_Click(sender As System.Object, e As System.EventArgs) Handles buttonReload.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        NewTabWorker.browserNewBrowser.Refresh()
+        currentBrowser.Refresh()
     End Sub
 
     ' Go Back (Address Bar)
