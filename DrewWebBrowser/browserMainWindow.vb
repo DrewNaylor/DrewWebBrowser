@@ -24,6 +24,8 @@ Public Class browserMainWindow
 
     ' Go button (Address bar)
     Private Sub goButton_Click(sender As System.Object, e As System.EventArgs) Handles goButton.Click
+        ' This forum post helped me do this properly: 
+        'http://forums.devx.com/showthread.php?151064-VB-Net-Tabcontrol-And-webbrowser-control/page3
         NewTabWorker.browserNewBrowser.Navigate(urlBox.Text)
     End Sub
 
@@ -64,7 +66,7 @@ Public Class browserMainWindow
 
     ' Go to Home Page (Menubar)
     Private Sub menubarView_GoToMenu_HomePage_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_HomePage.Click
-        NewTabWorker.browserNewBrowser.GoHome()
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoHome()
     End Sub
 
     ' Refresh Page (Menubar)
