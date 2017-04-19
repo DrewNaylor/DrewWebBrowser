@@ -26,27 +26,33 @@ Public Class browserMainWindow
     Private Sub goButton_Click(sender As System.Object, e As System.EventArgs) Handles goButton.Click
         ' This forum post helped me do this properly: 
         'http://forums.devx.com/showthread.php?151064-VB-Net-Tabcontrol-And-webbrowser-control/page3
-        NewTabWorker.browserNewBrowser.Navigate(urlBox.Text)
+
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.Navigate(urlBox.Text)
     End Sub
 
     ' Refresh button (Address Bar)
     Private Sub buttonReload_Click(sender As System.Object, e As System.EventArgs) Handles buttonReload.Click
-        NewTabWorker.browserNewBrowser.Refresh()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.Refresh()
     End Sub
 
     ' Go Back (Address Bar)
     Private Sub buttonBack_Click(sender As System.Object, e As System.EventArgs) Handles buttonBack.Click
-        NewTabWorker.browserNewBrowser.GoBack()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.GoBack()
     End Sub
 
     ' Go Forward (Address Bar)
     Private Sub forwardButton_Click(sender As System.Object, e As System.EventArgs) Handles forwardButton.Click
-        NewTabWorker.browserNewBrowser.GoForward()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.GoForward()
     End Sub
 
     ' Stop Navigation (Address bar)
     Private Sub buttonStopLoading_Click(sender As System.Object, e As System.EventArgs) Handles buttonStopLoading.Click
-        NewTabWorker.browserNewBrowser.Stop()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.Stop()
     End Sub
 
     ' Exits the Application (Menubar)
@@ -56,27 +62,32 @@ Public Class browserMainWindow
 
     ' Go Back (Menubar)
     Private Sub menubarView_GoToMenu_Back_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Back.Click
-        NewTabWorker.browserNewBrowser.GoBack()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.GoBack()
     End Sub
 
     ' Go Forward (Menubar)
     Private Sub menubarView_GoToMenu_Forward_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Forward.Click
-        NewTabWorker.browserNewBrowser.GoForward()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.GoForward()
     End Sub
 
     ' Go to Home Page (Menubar)
     Private Sub menubarView_GoToMenu_HomePage_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_HomePage.Click
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoHome()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.GoHome()
     End Sub
 
     ' Refresh Page (Menubar)
     Private Sub menubarView_Refresh_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Refresh.Click
-        NewTabWorker.browserNewBrowser.Refresh()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.Refresh()
     End Sub
 
     ' Stop Navigation (Menubar)
     Private Sub menubarView_Stop_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Stop.Click
-        NewTabWorker.browserNewBrowser.Stop()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.Stop()
     End Sub
 
     ' Open the About Dialogue (Menubar)
