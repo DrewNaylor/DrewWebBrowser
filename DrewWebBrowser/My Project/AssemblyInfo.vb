@@ -9,11 +9,11 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Drew's Lightweight Browser")>
-<Assembly: AssemblyDescription("Browse the Web with a Lightweight Browser! (Not recommended for everyday use.)")>
+<Assembly: AssemblyDescription("Browse the Web with a Lightweight Browser! Licensed under Gnu GPL v3+. (Not recommended for everyday use.)")>
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("Drew's Lightweight Browser")>
-<Assembly: AssemblyCopyright("Copyright (C) 2015-2017 Drew Naylor")>
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyCopyright("Copyright (C) 2015-2017 Drew Naylor. Gnu GPL v3+.")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 

@@ -22,7 +22,7 @@
 
 Public Class NewTabWorker
 
-    Shared Function tabAddMoreTabs()
+    Public Shared Sub tabAddMoreTabs()
         ' This SO answer is much better for tabbed browsing:
         ' http://stackoverflow.com/a/7459409
         ' Also this video
@@ -61,6 +61,5 @@ Public Class NewTabWorker
         browserNewBrowser.Dock = DockStyle.Fill
         tabNewTabPage.Controls.Add(browserNewBrowser)
         'tabNewTabPage.Text = browserNewBrowser.DocumentTitle
-        Return True
-    End Function
+    End Sub
 End Class
