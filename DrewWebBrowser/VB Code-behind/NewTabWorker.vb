@@ -6,6 +6,7 @@
         ' This SO answer is much better for tabbed browsing:
         ' http://stackoverflow.com/a/7459409
         Dim tabNewTabPage As New TabPage
+
         tabNewTabPage.Name = "BrowserTab"
         tabNewTabPage.Text = "New Tab"
         browserMainWindow.tabcontrolWebBrowserView.TabPages.Add(tabNewTabPage)
