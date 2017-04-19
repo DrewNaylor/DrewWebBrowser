@@ -22,25 +22,37 @@
 
 Public Class NewTabWorker
 
-    Public Shared browserNewBrowser As New WebBrowser
-
     Shared Function tabAddMoreTabs()
         ' This SO answer is much better for tabbed browsing:
         ' http://stackoverflow.com/a/7459409
-        Dim tabNewTabPage As New TabPage
+        ' Also this video
+        ' https://www.youtube.com/watch?v=ZTTom7ML0ng
 
+        ' Define the browser and new tab page.
+        Dim tabNewTabPage As New TabPage
+        Dim browserNewBrowser As New WebBrowser
+
+        ' Assign tags to the browser and tab page.
+        browserNewBrowser.Tag = tabNewTabPage
+        tabNewTabPage.Tag = browserNewBrowser
+
+        ' Assign name and text properties to the new tab.
         tabNewTabPage.Name = "BrowserTab"
         tabNewTabPage.Text = "New Tab"
-        browserMainWindow.tabcontrolWebBrowserView.TabPages.Add(tabNewTabPage)
 
+        ' Add the new tab page to the tab control.
+        browserMainWindow.tabcontrolWebBrowserView.TabPages.Add(tabNewTabPage)
         browserMainWindow.tabcontrolWebBrowserView.SelectedTab = tabNewTabPage
 
+        ' If the user wants to go to their homepage, then do so.
+        ' Otherwise, go to a blank tab.
         If My.Settings.browserBlankNewTab = True Then
             browserNewBrowser.Url = New Uri("about:blank", UriKind.Absolute)
         ElseIf My.Settings.browserBlankNewTab = False Then
             browserNewBrowser.GoHome()
         End If
 
+        ' Suppress script errors if the user wants to.
         If My.Settings.browserSuppressScriptErrors = True Then
             browserNewBrowser.ScriptErrorsSuppressed = True
         Else

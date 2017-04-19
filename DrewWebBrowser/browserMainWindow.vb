@@ -41,7 +41,8 @@ Public Class browserMainWindow
 
     ' Go Forward (Address Bar)
     Private Sub forwardButton_Click(sender As System.Object, e As System.EventArgs) Handles forwardButton.Click
-        NewTabWorker.browserNewBrowser.GoForward()
+        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        currentBrowser.GoForward()
     End Sub
 
     ' Stop Navigation (Address bar)
