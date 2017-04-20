@@ -112,5 +112,8 @@ Public Class browserMainWindow
 
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
         NewTabWorker.tabAddMoreTabs()
+        ' Let's count how many times we push this button:
+        intCrash = intCrash + 1
+        labelNewTabClickCounter.Text = "How many clicks does it take to make this app crash?: " & intCrash.ToString
     End Sub
 End Class
