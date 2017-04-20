@@ -24,6 +24,8 @@ Partial Class browserMainWindow
     Private Sub InitializeComponent()
         Me.panelMain = New System.Windows.Forms.Panel()
         Me.panelsplitWindowGlue = New System.Windows.Forms.SplitContainer()
+        Me.buttonRemoveTab = New System.Windows.Forms.Button()
+        Me.buttonNewTab = New System.Windows.Forms.Button()
         Me.forwardButton = New System.Windows.Forms.Button()
         Me.buttonStopLoading = New System.Windows.Forms.Button()
         Me.buttonReload = New System.Windows.Forms.Button()
@@ -45,8 +47,7 @@ Partial Class browserMainWindow
         Me.menubarHelp_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.tabcontrolWebBrowserView = New System.Windows.Forms.TabControl()
         Me.panelStatusBar = New System.Windows.Forms.StatusStrip()
-        Me.buttonNewTab = New System.Windows.Forms.Button()
-        Me.buttonRemoveTab = New System.Windows.Forms.Button()
+        Me.labelNewTabClickCounter = New System.Windows.Forms.Label()
         Me.panelMain.SuspendLayout()
         CType(Me.panelsplitWindowGlue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelsplitWindowGlue.Panel1.SuspendLayout()
@@ -75,6 +76,7 @@ Partial Class browserMainWindow
         '
         'panelsplitWindowGlue.Panel1
         '
+        Me.panelsplitWindowGlue.Panel1.Controls.Add(Me.labelNewTabClickCounter)
         Me.panelsplitWindowGlue.Panel1.Controls.Add(Me.buttonRemoveTab)
         Me.panelsplitWindowGlue.Panel1.Controls.Add(Me.buttonNewTab)
         Me.panelsplitWindowGlue.Panel1.Controls.Add(Me.forwardButton)
@@ -94,6 +96,24 @@ Partial Class browserMainWindow
         Me.panelsplitWindowGlue.SplitterDistance = 57
         Me.panelsplitWindowGlue.SplitterWidth = 1
         Me.panelsplitWindowGlue.TabIndex = 2
+        '
+        'buttonRemoveTab
+        '
+        Me.buttonRemoveTab.Location = New System.Drawing.Point(222, 3)
+        Me.buttonRemoveTab.Name = "buttonRemoveTab"
+        Me.buttonRemoveTab.Size = New System.Drawing.Size(75, 23)
+        Me.buttonRemoveTab.TabIndex = 9
+        Me.buttonRemoveTab.Text = "Remove Tab"
+        Me.buttonRemoveTab.UseVisualStyleBackColor = True
+        '
+        'buttonNewTab
+        '
+        Me.buttonNewTab.Location = New System.Drawing.Point(141, 3)
+        Me.buttonNewTab.Name = "buttonNewTab"
+        Me.buttonNewTab.Size = New System.Drawing.Size(75, 23)
+        Me.buttonNewTab.TabIndex = 8
+        Me.buttonNewTab.Text = "New Tab"
+        Me.buttonNewTab.UseVisualStyleBackColor = True
         '
         'forwardButton
         '
@@ -267,23 +287,14 @@ Partial Class browserMainWindow
         Me.panelStatusBar.TabIndex = 8
         Me.panelStatusBar.Text = "StatusStrip1"
         '
-        'buttonNewTab
+        'labelNewTabClickCounter
         '
-        Me.buttonNewTab.Location = New System.Drawing.Point(141, 3)
-        Me.buttonNewTab.Name = "buttonNewTab"
-        Me.buttonNewTab.Size = New System.Drawing.Size(75, 23)
-        Me.buttonNewTab.TabIndex = 8
-        Me.buttonNewTab.Text = "New Tab"
-        Me.buttonNewTab.UseVisualStyleBackColor = True
-        '
-        'buttonRemoveTab
-        '
-        Me.buttonRemoveTab.Location = New System.Drawing.Point(222, 3)
-        Me.buttonRemoveTab.Name = "buttonRemoveTab"
-        Me.buttonRemoveTab.Size = New System.Drawing.Size(75, 23)
-        Me.buttonRemoveTab.TabIndex = 9
-        Me.buttonRemoveTab.Text = "Remove Tab"
-        Me.buttonRemoveTab.UseVisualStyleBackColor = True
+        Me.labelNewTabClickCounter.AutoSize = True
+        Me.labelNewTabClickCounter.Location = New System.Drawing.Point(342, 11)
+        Me.labelNewTabClickCounter.Name = "labelNewTabClickCounter"
+        Me.labelNewTabClickCounter.Size = New System.Drawing.Size(261, 13)
+        Me.labelNewTabClickCounter.TabIndex = 10
+        Me.labelNewTabClickCounter.Text = "How many clicks does it take to make this app crash?"
         '
         'browserMainWindow
         '
@@ -332,4 +343,5 @@ Partial Class browserMainWindow
     Friend WithEvents tabcontrolWebBrowserView As TabControl
     Friend WithEvents buttonNewTab As Button
     Friend WithEvents buttonRemoveTab As Button
+    Friend WithEvents labelNewTabClickCounter As Label
 End Class
