@@ -22,6 +22,8 @@
 
 Public Class browserMainWindow
 
+    Public intCrash As New Integer
+
     ' Go button (Address bar)
     Private Sub goButton_Click(sender As System.Object, e As System.EventArgs) Handles goButton.Click
         ' This forum post helped me do this properly: 
@@ -101,6 +103,10 @@ Public Class browserMainWindow
 #Region "Tab Pages"
         ' This makes a new tab when the app loads.
         NewTabWorker.tabAddMoreTabs()
+
+        ' Let's see how many tabs will make this app crash:
+        intCrash = 0
+        labelNewTabClickCounter.Text = "How many clicks does it take to make this app crash?: " & intCrash.ToString
 #End Region
     End Sub
 
