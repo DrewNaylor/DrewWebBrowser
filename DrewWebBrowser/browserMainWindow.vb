@@ -29,30 +29,39 @@ Public Class browserMainWindow
 
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.Navigate(urlBox.Text)
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Refresh button (Address Bar)
     Private Sub buttonReload_Click(sender As System.Object, e As System.EventArgs) Handles buttonReload.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.Refresh()
+        AddHandler current.DocumentCompleted, AddressOf Done
     End Sub
 
     ' Go Back (Address Bar)
     Private Sub buttonBack_Click(sender As System.Object, e As System.EventArgs) Handles buttonBack.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.GoBack()
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Go Forward (Address Bar)
     Private Sub forwardButton_Click(sender As System.Object, e As System.EventArgs) Handles forwardButton.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.GoForward()
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Stop Navigation (Address bar)
     Private Sub buttonStopLoading_Click(sender As System.Object, e As System.EventArgs) Handles buttonStopLoading.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.Stop()
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Exits the Application (Menubar)
@@ -64,30 +73,40 @@ Public Class browserMainWindow
     Private Sub menubarView_GoToMenu_Back_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Back.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.GoBack()
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Go Forward (Menubar)
     Private Sub menubarView_GoToMenu_Forward_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Forward.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.GoForward()
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Go to Home Page (Menubar)
     Private Sub menubarView_GoToMenu_HomePage_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_HomePage.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.GoHome()
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Refresh Page (Menubar)
     Private Sub menubarView_Refresh_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Refresh.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.Refresh()
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Stop Navigation (Menubar)
     Private Sub menubarView_Stop_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Stop.Click
         Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
         currentBrowser.Stop()
+                AddHandler current.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Open the About Dialogue (Menubar)
@@ -107,4 +126,10 @@ Public Class browserMainWindow
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
         NewTabWorker.tabAddMoreTabs()
     End Sub
+#Region "Contribution by Jdc20181 - BeffsBrowser"
+
+   Private Sub Done(ByVal sender As Object, ByVal e As Gecko.Events.GeckoDocumentCompletedEventArgs)
+TabcontrolWebBrowserView.SelectedTab.Text = CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).DocumentTitle
+
+End Sub
 End Class
