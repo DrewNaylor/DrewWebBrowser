@@ -56,6 +56,5 @@ Public Class NewTabWorker
         End If
         browserNewBrowser.Dock = DockStyle.Fill
         tabNewTabPage.Controls.Add(browserNewBrowser)
-        'tabNewTabPage.Text = browserNewBrowser.DocumentTitle
     End Sub
 End Class

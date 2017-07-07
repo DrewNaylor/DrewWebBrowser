@@ -28,7 +28,7 @@ Public Class browserMainWindow
         'http://forums.devx.com/showthread.php?151064-VB-Net-Tabcontrol-And-webbrowser-control/page3
 
         Dim currentBrowser As New WebBrowser
-        currentBrowser.Navigate(urlBox.Text)
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Navigate(urlBox.Text)
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
     End Sub
@@ -126,7 +126,35 @@ Public Class browserMainWindow
     End Sub
 
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
-        NewTabWorker.tabAddMoreTabs()
+        ' Define the browser and new tab page.
+        Dim tabNewTabPage As New TabPage
+        Dim currentBrowser As New WebBrowser
+
+        ' Assign name and text properties to the new tab.
+        tabNewTabPage.Name = "BrowserTab"
+        tabNewTabPage.Text = "New Tab"
+
+        ' Add the new tab page to the tab control.
+        tabcontrolWebBrowserView.TabPages.Add(tabNewTabPage)
+        tabcontrolWebBrowserView.SelectedTab = tabNewTabPage
+
+        ' If the user wants to go to their homepage, then do so.
+        ' Otherwise, go to a blank tab.
+        If My.Settings.browserBlankNewTab = True Then
+            currentBrowser.Url = New Uri("about:blank", UriKind.Absolute)
+        ElseIf My.Settings.browserBlankNewTab = False Then
+            currentBrowser.GoHome()
+        End If
+
+        ' Suppress script errors if the user wants to.
+        If My.Settings.browserSuppressScriptErrors = True Then
+            currentBrowser.ScriptErrorsSuppressed = True
+        Else
+            currentBrowser.ScriptErrorsSuppressed = False
+        End If
+        currentBrowser.Dock = DockStyle.Fill
+        tabNewTabPage.Controls.Add(currentBrowser)
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
     End Sub
 
 #Region "Contribution by Jdc20181 - BeffsBrowser. Some changes by Drew Naylor."
