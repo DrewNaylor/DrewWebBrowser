@@ -116,8 +116,6 @@ Public Class browserMainWindow
         BrowserAbout.ShowDialog()
     End Sub
 
-
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 #Region "Tab Pages"
         ' This makes a new tab when the app loads.
@@ -126,6 +124,7 @@ Public Class browserMainWindow
     End Sub
 
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
+        ' This makes a new tab when the user wants to make one by clicking a button.
         tabAddMoreTabs()
     End Sub
 
