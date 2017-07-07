@@ -29,32 +29,43 @@ Public Class browserMainWindow
         ' This forum post helped me do this properly: 
         'http://forums.devx.com/showthread.php?151064-VB-Net-Tabcontrol-And-webbrowser-control/page3
 
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.Navigate(urlBox.Text)
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Navigate(urlBox.Text)
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Refresh button (Address Bar)
     Private Sub buttonReload_Click(sender As System.Object, e As System.EventArgs) Handles buttonReload.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.Refresh()
+
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Refresh()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Go Back (Address Bar)
     Private Sub buttonBack_Click(sender As System.Object, e As System.EventArgs) Handles buttonBack.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.GoBack()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoBack()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Go Forward (Address Bar)
     Private Sub forwardButton_Click(sender As System.Object, e As System.EventArgs) Handles forwardButton.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.GoForward()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoForward()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Stop Navigation (Address bar)
     Private Sub buttonStopLoading_Click(sender As System.Object, e As System.EventArgs) Handles buttonStopLoading.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.Stop()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Stop()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Exits the Application (Menubar)
@@ -64,32 +75,42 @@ Public Class browserMainWindow
 
     ' Go Back (Menubar)
     Private Sub menubarView_GoToMenu_Back_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Back.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.GoBack()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoBack()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Go Forward (Menubar)
     Private Sub menubarView_GoToMenu_Forward_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Forward.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.GoForward()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoForward()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Go to Home Page (Menubar)
     Private Sub menubarView_GoToMenu_HomePage_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_HomePage.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.GoHome()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoHome()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Refresh Page (Menubar)
     Private Sub menubarView_Refresh_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Refresh.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.Refresh()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Refresh()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Stop Navigation (Menubar)
     Private Sub menubarView_Stop_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Stop.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.Stop()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Stop()
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+
     End Sub
 
     ' Open the About Dialogue (Menubar)
@@ -97,23 +118,70 @@ Public Class browserMainWindow
         BrowserAbout.ShowDialog()
     End Sub
 
-
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 #Region "Tab Pages"
         ' This makes a new tab when the app loads.
-        NewTabWorker.tabAddMoreTabs()
 
         ' Let's see how many tabs will make this app crash:
         intCrash = 0
         labelNewTabClickCounter.Text = "How many clicks does it take to make this app crash?: " & intCrash.ToString
+        tabAddMoreTabs()
 #End Region
     End Sub
 
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
-        NewTabWorker.tabAddMoreTabs()
         ' Let's count how many times we push this button:
         intCrash = intCrash + 1
         labelNewTabClickCounter.Text = "How many clicks does it take to make this app crash?: " & intCrash.ToString
+        ' This makes a new tab when the user wants to make one by clicking a button.
+        tabAddMoreTabs()
     End Sub
+
+#Region "Contribution by Jdc20181 - BeffsBrowser. Some changes by Drew Naylor."
+
+    Private Sub Done(ByVal sender As Object, ByVal e As WebBrowserDocumentCompletedEventArgs)
+        ' When the webbrowser finishes loading, update tab titles.
+        tabcontrolWebBrowserView.SelectedTab.Text = CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).DocumentTitle
+
+    End Sub
+#End Region
+
+#Region "New version of tab code, including adding and removing tabs."
+    Private Sub tabAddMoreTabs()
+        ' This SO answer is much better for tabbed browsing:
+        ' http://stackoverflow.com/a/7459409
+        ' Also based partially on this code at line 58:
+        ' https://github.com/jdc20181/BeffsBrowser/blob/2b8f8957199a499926ea65e3d23f2fb91bbacf2e/Source/Main/BeffsBrowserMainV2.vb
+
+        ' Define the browser and new tab page.
+        Dim tabNewTabPage As New TabPage
+        Dim currentBrowser As New WebBrowser
+
+        ' Assign name and text properties to the new tab.
+        tabNewTabPage.Name = "BrowserTab"
+        tabNewTabPage.Text = "New Tab"
+
+        ' Add the new tab page to the tab control.
+        tabcontrolWebBrowserView.TabPages.Add(tabNewTabPage)
+        tabcontrolWebBrowserView.SelectedTab = tabNewTabPage
+
+        ' If the user wants to go to their homepage, then do so.
+        ' Otherwise, go to a blank tab.
+        If My.Settings.browserBlankNewTab = True Then
+            currentBrowser.Url = New Uri("about:blank", UriKind.Absolute)
+        ElseIf My.Settings.browserBlankNewTab = False Then
+            currentBrowser.GoHome()
+        End If
+
+        ' Suppress script errors if the user wants to.
+        If My.Settings.browserSuppressScriptErrors = True Then
+            currentBrowser.ScriptErrorsSuppressed = True
+        Else
+            currentBrowser.ScriptErrorsSuppressed = False
+        End If
+        currentBrowser.Dock = DockStyle.Fill
+        tabNewTabPage.Controls.Add(currentBrowser)
+        AddHandler currentBrowser.DocumentCompleted, AddressOf Done
+    End Sub
+#End Region
 End Class
