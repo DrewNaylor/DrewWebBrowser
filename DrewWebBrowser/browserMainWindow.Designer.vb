@@ -24,6 +24,8 @@ Partial Class browserMainWindow
     Private Sub InitializeComponent()
         Me.panelMain = New System.Windows.Forms.Panel()
         Me.panelsplitWindowGlue = New System.Windows.Forms.SplitContainer()
+        Me.buttonRemoveTab = New System.Windows.Forms.Button()
+        Me.buttonNewTab = New System.Windows.Forms.Button()
         Me.forwardButton = New System.Windows.Forms.Button()
         Me.buttonStopLoading = New System.Windows.Forms.Button()
         Me.buttonReload = New System.Windows.Forms.Button()
@@ -45,8 +47,6 @@ Partial Class browserMainWindow
         Me.menubarHelp_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.tabcontrolWebBrowserView = New System.Windows.Forms.TabControl()
         Me.panelStatusBar = New System.Windows.Forms.StatusStrip()
-        Me.buttonNewTab = New System.Windows.Forms.Button()
-        Me.buttonRemoveTab = New System.Windows.Forms.Button()
         Me.panelMain.SuspendLayout()
         CType(Me.panelsplitWindowGlue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelsplitWindowGlue.Panel1.SuspendLayout()
@@ -94,6 +94,24 @@ Partial Class browserMainWindow
         Me.panelsplitWindowGlue.SplitterDistance = 57
         Me.panelsplitWindowGlue.SplitterWidth = 1
         Me.panelsplitWindowGlue.TabIndex = 2
+        '
+        'buttonRemoveTab
+        '
+        Me.buttonRemoveTab.Location = New System.Drawing.Point(222, 3)
+        Me.buttonRemoveTab.Name = "buttonRemoveTab"
+        Me.buttonRemoveTab.Size = New System.Drawing.Size(91, 23)
+        Me.buttonRemoveTab.TabIndex = 9
+        Me.buttonRemoveTab.Text = "Remove Tab"
+        Me.buttonRemoveTab.UseVisualStyleBackColor = True
+        '
+        'buttonNewTab
+        '
+        Me.buttonNewTab.Location = New System.Drawing.Point(141, 3)
+        Me.buttonNewTab.Name = "buttonNewTab"
+        Me.buttonNewTab.Size = New System.Drawing.Size(75, 23)
+        Me.buttonNewTab.TabIndex = 8
+        Me.buttonNewTab.Text = "New Tab"
+        Me.buttonNewTab.UseVisualStyleBackColor = True
         '
         'forwardButton
         '
@@ -266,24 +284,6 @@ Partial Class browserMainWindow
         Me.panelStatusBar.Size = New System.Drawing.Size(1008, 22)
         Me.panelStatusBar.TabIndex = 8
         Me.panelStatusBar.Text = "StatusStrip1"
-        '
-        'buttonNewTab
-        '
-        Me.buttonNewTab.Location = New System.Drawing.Point(141, 3)
-        Me.buttonNewTab.Name = "buttonNewTab"
-        Me.buttonNewTab.Size = New System.Drawing.Size(75, 23)
-        Me.buttonNewTab.TabIndex = 8
-        Me.buttonNewTab.Text = "New Tab"
-        Me.buttonNewTab.UseVisualStyleBackColor = True
-        '
-        'buttonRemoveTab
-        '
-        Me.buttonRemoveTab.Location = New System.Drawing.Point(222, 3)
-        Me.buttonRemoveTab.Name = "buttonRemoveTab"
-        Me.buttonRemoveTab.Size = New System.Drawing.Size(75, 23)
-        Me.buttonRemoveTab.TabIndex = 9
-        Me.buttonRemoveTab.Text = "Remove Tab"
-        Me.buttonRemoveTab.UseVisualStyleBackColor = True
         '
         'browserMainWindow
         '
