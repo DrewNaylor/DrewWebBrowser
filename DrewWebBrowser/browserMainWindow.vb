@@ -121,7 +121,7 @@ Public Class browserMainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 #Region "Tab Pages"
         ' This makes a new tab when the app loads.
-        NewTabWorker.tabAddMoreTabs()
+        tabAddMoreTabs()
 #End Region
     End Sub
 
@@ -140,6 +140,11 @@ Public Class browserMainWindow
 
 #Region "New version of tab code, including adding and removing tabs."
     Private Sub tabAddMoreTabs()
+        ' This SO answer is much better for tabbed browsing:
+        ' http://stackoverflow.com/a/7459409
+        ' Also based partially on this code at line 58:
+        ' https://github.com/jdc20181/BeffsBrowser/blob/2b8f8957199a499926ea65e3d23f2fb91bbacf2e/Source/Main/BeffsBrowserMainV2.vb
+
         ' Define the browser and new tab page.
         Dim tabNewTabPage As New TabPage
         Dim currentBrowser As New WebBrowser
