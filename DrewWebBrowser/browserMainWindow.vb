@@ -27,7 +27,7 @@ Public Class browserMainWindow
         ' This forum post helped me do this properly: 
         'http://forums.devx.com/showthread.php?151064-VB-Net-Tabcontrol-And-webbrowser-control/page3
 
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         currentBrowser.Navigate(urlBox.Text)
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
@@ -44,7 +44,7 @@ Public Class browserMainWindow
 
     ' Go Back (Address Bar)
     Private Sub buttonBack_Click(sender As System.Object, e As System.EventArgs) Handles buttonBack.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoBack()
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
@@ -52,7 +52,7 @@ Public Class browserMainWindow
 
     ' Go Forward (Address Bar)
     Private Sub forwardButton_Click(sender As System.Object, e As System.EventArgs) Handles forwardButton.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoForward()
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
@@ -60,7 +60,7 @@ Public Class browserMainWindow
 
     ' Stop Navigation (Address bar)
     Private Sub buttonStopLoading_Click(sender As System.Object, e As System.EventArgs) Handles buttonStopLoading.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Stop()
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
@@ -73,7 +73,7 @@ Public Class browserMainWindow
 
     ' Go Back (Menubar)
     Private Sub menubarView_GoToMenu_Back_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Back.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoBack()
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
@@ -81,7 +81,7 @@ Public Class browserMainWindow
 
     ' Go Forward (Menubar)
     Private Sub menubarView_GoToMenu_Forward_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Forward.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoForward()
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
@@ -89,7 +89,7 @@ Public Class browserMainWindow
 
     ' Go to Home Page (Menubar)
     Private Sub menubarView_GoToMenu_HomePage_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_HomePage.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoHome()
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
@@ -97,7 +97,7 @@ Public Class browserMainWindow
 
     ' Refresh Page (Menubar)
     Private Sub menubarView_Refresh_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Refresh.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Refresh()
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
@@ -105,7 +105,7 @@ Public Class browserMainWindow
 
     ' Stop Navigation (Menubar)
     Private Sub menubarView_Stop_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Stop.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
+        Dim currentBrowser As New WebBrowser
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Stop()
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
 
