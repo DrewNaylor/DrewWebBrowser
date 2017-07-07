@@ -126,6 +126,20 @@ Public Class browserMainWindow
     End Sub
 
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
+        tabAddMoreTabs()
+    End Sub
+
+#Region "Contribution by Jdc20181 - BeffsBrowser. Some changes by Drew Naylor."
+
+    Private Sub Done(ByVal sender As Object, ByVal e As WebBrowserDocumentCompletedEventArgs)
+        ' When the webbrowser finishes loading, update tab titles.
+        tabcontrolWebBrowserView.SelectedTab.Text = CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).DocumentTitle
+
+    End Sub
+#End Region
+
+#Region "New version of tab code, including adding and removing tabs."
+    Private Sub tabAddMoreTabs()
         ' Define the browser and new tab page.
         Dim tabNewTabPage As New TabPage
         Dim currentBrowser As New WebBrowser
@@ -155,14 +169,6 @@ Public Class browserMainWindow
         currentBrowser.Dock = DockStyle.Fill
         tabNewTabPage.Controls.Add(currentBrowser)
         AddHandler currentBrowser.DocumentCompleted, AddressOf Done
-    End Sub
-
-#Region "Contribution by Jdc20181 - BeffsBrowser. Some changes by Drew Naylor."
-
-    Private Sub Done(ByVal sender As Object, ByVal e As WebBrowserDocumentCompletedEventArgs)
-        ' When the webbrowser finishes loading, update tab titles.
-        tabcontrolWebBrowserView.SelectedTab.Text = CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).DocumentTitle
-
     End Sub
 #End Region
 End Class
