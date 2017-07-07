@@ -32,10 +32,6 @@ Public Class NewTabWorker
         Dim tabNewTabPage As New TabPage
         Dim browserNewBrowser As New WebBrowser
 
-        ' Assign tags to the browser and tab page.
-        browserNewBrowser.Tag = tabNewTabPage
-        tabNewTabPage.Tag = browserNewBrowser
-
         ' Assign name and text properties to the new tab.
         tabNewTabPage.Name = "BrowserTab"
         tabNewTabPage.Text = "New Tab"

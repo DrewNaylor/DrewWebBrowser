@@ -128,6 +128,7 @@ Public Class browserMainWindow
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
         NewTabWorker.tabAddMoreTabs()
     End Sub
+
 #Region "Contribution by Jdc20181 - BeffsBrowser. Some changes by Drew Naylor."
 
     Private Sub Done(ByVal sender As Object, ByVal e As WebBrowserDocumentCompletedEventArgs)
