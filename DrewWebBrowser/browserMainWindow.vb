@@ -33,8 +33,9 @@ Public Class browserMainWindow
 
     ' Refresh button (Address Bar)
     Private Sub buttonReload_Click(sender As System.Object, e As System.EventArgs) Handles buttonReload.Click
-        Dim currentBrowser As WebBrowser = Me.tabcontrolWebBrowserView.SelectedTab.Tag
-        currentBrowser.Refresh()
+        Dim currentBrowser As New WebBrowser
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Refresh()
+        'currentBrowser.Refresh()
     End Sub
 
     ' Go Back (Address Bar)
