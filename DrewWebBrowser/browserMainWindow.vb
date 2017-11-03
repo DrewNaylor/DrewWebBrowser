@@ -108,4 +108,21 @@ Public Class browserMainWindow
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
         NewTabWorker.tabAddMoreTabs()
     End Sub
+Private Sub TabControl_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles tabcontrolWebBrowserView.KeyPress
+
+If Keys.T + Keys.ControlKey Then
+            NewTabWorker.tabAddMoreTabs()
+
+    End If
+
+If Keys.W + Keys.ControlKey Then
+         tabcontrolWebBrowserView.Controls.Remove(tabcontrolWebBrowserView.SelectedTab)
+
+    End If
+
+End Sub
+
+
+
+
 End Class
