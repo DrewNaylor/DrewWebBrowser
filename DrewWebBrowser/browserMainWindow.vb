@@ -110,17 +110,21 @@ Public Class browserMainWindow
     End Sub
 Private Sub TabControl_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles tabcontrolWebBrowserView.KeyPress
 
-If Keys.T + Keys.ControlKey Then
+If Keys.T AndAlso Keys.ControlKey Then
             NewTabWorker.tabAddMoreTabs()
 
-    ElseIf Keys.W + Keys.ControlKey Then
+End Sub
+
+Private Sub BrowserForm_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+
+
+
+If Keys.W AndAlso Keys.ControlKey Then
          tabcontrolWebBrowserView.Controls.Remove(tabcontrolWebBrowserView.SelectedTab)
 
     End If
 
 End Sub
-
-
 
 
 End Class
