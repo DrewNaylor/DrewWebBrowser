@@ -8,5 +8,8 @@
     <Setting Name="browserSuppressScriptErrors" Type="System.String" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="browserHomepage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.google.com</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

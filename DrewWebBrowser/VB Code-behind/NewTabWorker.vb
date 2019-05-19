@@ -20,6 +20,8 @@
 
 
 
+Imports Gecko
+
 Public Class NewTabWorker
 
     Public Shared Sub tabAddMoreTabs()
@@ -27,10 +29,13 @@ Public Class NewTabWorker
         ' http://stackoverflow.com/a/7459409
         ' Also this video
         ' https://www.youtube.com/watch?v=ZTTom7ML0ng
-
+        Xpcom.Initialize("Firefox")
         ' Define the browser and new tab page.
         Dim tabNewTabPage As New TabPage
-        Dim browserNewBrowser As New WebBrowser
+        Dim browserNewBrowser As New GeckoWebBrowser
+
+        ' Define an integer for getting the IE version.
+        ' Also get the IE version at the same time.
 
         ' Assign tags to the browser and tab page.
         browserNewBrowser.Tag = tabNewTabPage
@@ -47,17 +52,17 @@ Public Class NewTabWorker
         ' If the user wants to go to their homepage, then do so.
         ' Otherwise, go to a blank tab.
         If My.Settings.browserBlankNewTab = True Then
-            browserNewBrowser.Url = New Uri("about:blank", UriKind.Absolute)
+            browserNewBrowser.Navigate("about:blank", UriKind.Absolute)
         ElseIf My.Settings.browserBlankNewTab = False Then
-            browserNewBrowser.GoHome()
+            browserNewBrowser.Navigate(My.Settings.browserHomepage, UriKind.Absolute)
         End If
 
         ' Suppress script errors if the user wants to.
-        If My.Settings.browserSuppressScriptErrors = True Then
-            browserNewBrowser.ScriptErrorsSuppressed = True
-        Else
-            browserNewBrowser.ScriptErrorsSuppressed = False
-        End If
+        'If My.Settings.browserSuppressScriptErrors = True Then
+        '    browserNewBrowser.ScriptErrorsSuppressed = True
+        'Else
+        '    browserNewBrowser.ScriptErrorsSuppressed = False
+        'End If
         browserNewBrowser.Dock = DockStyle.Fill
         tabNewTabPage.Controls.Add(browserNewBrowser)
         'tabNewTabPage.Text = browserNewBrowser.DocumentTitle
