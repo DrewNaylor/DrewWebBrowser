@@ -29,8 +29,13 @@ Public Class browserMainWindow
         ' This forum post helped me do this properly: 
         'http://forums.devx.com/showthread.php?151064-VB-Net-Tabcontrol-And-webbrowser-control/page3
 
-        'Dim currentBrowser As GeckoWebBrowser
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Navigate(urlBox.Text)
+        ' If using GeckoFX, interact with that browser.
+        If My.Settings.browserEngine = "geckofx" Then
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Navigate(urlBox.Text)
+        Else
+            ' Otherwise, interact with the Trident browser.
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Navigate(urlBox.Text)
+        End If
     End Sub
 
     ' Refresh button (Address Bar)
