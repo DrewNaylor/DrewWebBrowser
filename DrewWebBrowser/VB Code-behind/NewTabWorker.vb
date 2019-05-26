@@ -38,7 +38,7 @@ Public Class NewTabWorker
         ' Define the browser and new tab page.
         Dim tabNewTabPage As New TabPage
         Dim webbrowserGeckoFX As New GeckoWebBrowser
-        Dim webbrowserTrident As WebBrowser
+        Dim webbrowserTrident As New WebBrowser
 
         ' Define an integer for getting the IE version.
         ' Also get the IE version at the same time.
@@ -55,9 +55,15 @@ Public Class NewTabWorker
         ' If the user wants to go to their homepage, then do so.
         ' Otherwise, go to a blank tab.
         If My.Settings.browserBlankNewTab = True Then
-            browserNewBrowser.Navigate("about:blank", CType(UriKind.Absolute, GeckoLoadFlags))
+            ' If we're using GeckoFX, use that instead of
+            ' Trident (Internet Explorer).
+            If My.Settings.browserEngine = "geckofx" Then
+                webbrowserGeckoFX.Navigate("about:blank", CType(UriKind.Absolute, GeckoLoadFlags))
+            Else
+                webbrowserTrident.Navigate("about:blank", UriKind.Absolute)
+            End If
         ElseIf My.Settings.browserBlankNewTab = False Then
-            browserNewBrowser.Navigate(My.Settings.browserHomepage, CType(UriKind.Absolute, GeckoLoadFlags))
+                webbrowserGeckoFX.Navigate(My.Settings.browserHomepage, CType(UriKind.Absolute, GeckoLoadFlags))
         End If
 
         ' Suppress script errors if the user wants to.
