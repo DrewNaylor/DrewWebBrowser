@@ -52,9 +52,9 @@ Public Class NewTabWorker
         ' If the user wants to go to their homepage, then do so.
         ' Otherwise, go to a blank tab.
         If My.Settings.browserBlankNewTab = True Then
-            browserNewBrowser.Navigate("about:blank", UriKind.Absolute)
+            browserNewBrowser.Navigate("about:blank", CType(UriKind.Absolute, GeckoLoadFlags))
         ElseIf My.Settings.browserBlankNewTab = False Then
-            browserNewBrowser.Navigate(My.Settings.browserHomepage, UriKind.Absolute)
+            browserNewBrowser.Navigate(My.Settings.browserHomepage, CType(UriKind.Absolute, GeckoLoadFlags))
         End If
 
         ' Suppress script errors if the user wants to.
