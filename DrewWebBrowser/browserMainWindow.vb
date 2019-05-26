@@ -46,7 +46,7 @@ Public Class browserMainWindow
         'http://forums.devx.com/showthread.php?151064-VB-Net-Tabcontrol-And-webbrowser-control/page3
 
         ' If using GeckoFX, interact with that browser.
-        If My.Settings.browserEngine = "geckofx" Then
+        If getEngine() = "geckofx" Then
             CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Navigate(urlBox.Text)
         Else
             ' Otherwise, interact with the Trident browser.
@@ -58,7 +58,7 @@ Public Class browserMainWindow
     Private Sub buttonReload_Click(sender As System.Object, e As System.EventArgs) Handles buttonReload.Click
 
         ' Work with GeckoFX if that's being used.
-        If My.Settings.browserEngine = "geckofx" Then
+        If getEngine() = "geckofx" Then
             CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Reload()
         Else
             ' Otherwise, work with IE.
@@ -70,8 +70,12 @@ Public Class browserMainWindow
     Private Sub buttonBack_Click(sender As System.Object, e As System.EventArgs) Handles buttonBack.Click
 
         ' If we're working with GeckoFX, use it.
-        If 
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoBack()
+        If getEngine() = "geckofx" Then
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoBack()
+        Else
+            ' Otherwise, it's IE.
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoBack()
+        End If
     End Sub
 
     ' Go Forward (Address Bar)
