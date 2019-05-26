@@ -90,8 +90,18 @@ Public Class browserMainWindow
 
     ' Go Forward (Address Bar)
     Private Sub forwardButton_Click(sender As System.Object, e As System.EventArgs) Handles forwardButton.Click
-        ' 
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoForward()
+        ' Code moved to its own sub.
+        navGoForward()
+    End Sub
+
+    Private Sub navGoForward()
+        ' If working with GeckoFX, use it.
+        If getEngine() = "geckofx" Then
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoForward()
+        Else
+            ' Otherwise, it's just IE.
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).GoForward()
+        End If
     End Sub
 
     ' Stop Navigation (Address bar)
