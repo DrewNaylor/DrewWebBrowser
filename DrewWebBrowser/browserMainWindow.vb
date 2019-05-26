@@ -41,8 +41,13 @@ Public Class browserMainWindow
     ' Refresh button (Address Bar)
     Private Sub buttonReload_Click(sender As System.Object, e As System.EventArgs) Handles buttonReload.Click
 
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Reload()
-        'currentBrowser.Refresh()
+        ' Work with GeckoFX if that's being used.
+        If My.Settings.browserEngine = "geckofx" Then
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Reload()
+        Else
+            ' Otherwise, work with IE.
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Refresh()
+        End If
     End Sub
 
     ' Go Back (Address Bar)
