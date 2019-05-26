@@ -68,6 +68,7 @@ Partial Class browserMainWindow
         'panelsplitWindowGlue
         '
         Me.panelsplitWindowGlue.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelsplitWindowGlue.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.panelsplitWindowGlue.Location = New System.Drawing.Point(0, 0)
         Me.panelsplitWindowGlue.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelsplitWindowGlue.MinimumSize = New System.Drawing.Size(990, 679)
