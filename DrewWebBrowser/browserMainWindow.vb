@@ -94,6 +94,7 @@ Public Class browserMainWindow
         navGoForward()
     End Sub
 
+    ' Go forward
     Private Sub navGoForward()
         ' If working with GeckoFX, use it.
         If getEngine() = "geckofx" Then
@@ -106,8 +107,19 @@ Public Class browserMainWindow
 
     ' Stop Navigation (Address bar)
     Private Sub buttonStopLoading_Click(sender As System.Object, e As System.EventArgs) Handles buttonStopLoading.Click
+        ' Code moved to its own sub.
+        navStop()
+    End Sub
 
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Stop()
+    ' Stop navigation
+    Private Sub navStop()
+        ' If working with Gecko, use it.
+        If getEngine() = "geckofx" Then
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Stop()
+        Else
+            ' Otherwise, we're just using IE.
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Stop()
+        End If
     End Sub
 
     ' Exits the Application (Menubar)
