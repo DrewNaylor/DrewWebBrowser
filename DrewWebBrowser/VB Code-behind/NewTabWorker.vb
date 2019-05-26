@@ -58,9 +58,9 @@ Public Class NewTabWorker
             ' If we're using GeckoFX, use that instead of
             ' Trident (Internet Explorer).
             If My.Settings.browserEngine = "geckofx" Then
-                webbrowserGeckoFX.Navigate("about:blank", CType(UriKind.Absolute, GeckoLoadFlags))
+                webbrowserGeckoFX.Navigate("about:blank")
             Else
-                webbrowserTrident.Navigate("about:blank", UriKind.Absolute)
+                webbrowserTrident.Navigate("about:blank")
             End If
         ElseIf My.Settings.browserBlankNewTab = False Then
                 webbrowserGeckoFX.Navigate(My.Settings.browserHomepage, CType(UriKind.Absolute, GeckoLoadFlags))
