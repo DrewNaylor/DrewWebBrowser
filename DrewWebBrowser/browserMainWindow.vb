@@ -24,12 +24,20 @@ Imports Gecko
 
 Public Class browserMainWindow
 
-    Private Shared Function getEngine() As String
+    Private Function getEngine() As String
         ' This function is used to see which engine is being used in a tab.
         ' It returns "geckofx" if using GeckoFX, "trident" if using the... 
         ' standard Windows Forms WebBrowser control, and others if they're
         ' added to the program.
 
+        ' First, make the control easier to refer to.
+        If tabcontrolWebBrowserView.SelectedTab.Controls.Item(0).GetType() Is GetType(GeckoWebBrowser) Then
+            ' If it's a GeckoWebBrowser, then we return "geckofx" for the engine.
+            Return "geckofx"
+        Else
+            ' If it's a WebBrowser or something else, then return "trident".
+            Return "trident"
+        End If
     End Function
 
     ' Go button (Address bar)
