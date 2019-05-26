@@ -24,6 +24,14 @@ Imports Gecko
 
 Public Class browserMainWindow
 
+    Private Shared Function getEngine() As String
+        ' This function is used to see which engine is being used in a tab.
+        ' It returns "geckofx" if using GeckoFX, "trident" if using the... 
+        ' standard Windows Forms WebBrowser control, and others if they're
+        ' added to the program.
+
+    End Function
+
     ' Go button (Address bar)
     Private Sub goButton_Click(sender As System.Object, e As System.EventArgs) Handles goButton.Click
         ' This forum post helped me do this properly: 
@@ -53,6 +61,8 @@ Public Class browserMainWindow
     ' Go Back (Address Bar)
     Private Sub buttonBack_Click(sender As System.Object, e As System.EventArgs) Handles buttonBack.Click
 
+        ' If we're working with GeckoFX, use it.
+        If 
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoBack()
     End Sub
 
