@@ -125,8 +125,8 @@ Public Class browserMainWindow
 
     ' Refresh Page (Menubar)
     Private Sub menubarView_Refresh_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Refresh.Click
-
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Reload()
+        ' Code moved to its own sub.
+        navRefresh()
     End Sub
 
     ' Stop Navigation (Menubar)
