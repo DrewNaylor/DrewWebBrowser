@@ -141,8 +141,13 @@ Public Class browserMainWindow
 
     ' Go to Home Page (Menubar)
     Private Sub menubarView_GoToMenu_HomePage_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_HomePage.Click
-
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Navigate(My.Settings.browserHomepage)
+        ' If we're using Gecko, use that.
+        If getEngine() = "geckofx" Then
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Navigate(My.Settings.browserHomepage)
+        Else
+            ' Otherwise, use IE.
+            CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Navigate(My.Settings.browserHomepage)
+        End If
     End Sub
 
     ' Refresh Page (Menubar)
