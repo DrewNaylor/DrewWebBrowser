@@ -29,17 +29,20 @@ Public Class NewTabWorker
         ' http://stackoverflow.com/a/7459409
         ' Also this video
         ' https://www.youtube.com/watch?v=ZTTom7ML0ng
-        Xpcom.Initialize("Firefox")
+
+        If My.Settings.browserEngine = "geckofx" Then
+            ' If the user wants to use GeckoFX,
+            ' initialize Firefox.
+            Xpcom.Initialize("Firefox")
+        End If
         ' Define the browser and new tab page.
         Dim tabNewTabPage As New TabPage
-        Dim browserNewBrowser As New GeckoWebBrowser
+        Dim webbrowserGeckoFX As New GeckoWebBrowser
+        Dim webbrowserTrident As WebBrowser
 
         ' Define an integer for getting the IE version.
         ' Also get the IE version at the same time.
 
-        ' Assign tags to the browser and tab page.
-        browserNewBrowser.Tag = tabNewTabPage
-        tabNewTabPage.Tag = browserNewBrowser
 
         ' Assign name and text properties to the new tab.
         tabNewTabPage.Name = "BrowserTab"
