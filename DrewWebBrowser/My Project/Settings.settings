@@ -5,7 +5,7 @@
     <Setting Name="browserBlankNewTab" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="browserSuppressScriptErrors" Type="System.String" Scope="User">
+    <Setting Name="browserSuppressScriptErrors" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="browserHomepage" Type="System.String" Scope="User">

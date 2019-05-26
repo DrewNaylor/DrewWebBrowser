@@ -73,16 +73,16 @@ Public Class NewTabWorker
             End If
         End If
 
-            ' Suppress script errors if the user wants to.
-            'If My.Settings.browserSuppressScriptErrors = True Then
-            '    browserNewBrowser.ScriptErrorsSuppressed = True
-            'Else
-            '    browserNewBrowser.ScriptErrorsSuppressed = False
-            'End If
+        ' Suppress script errors if the user wants to and we're using Trident.
+        If My.Settings.browserSuppressScriptErrors = True Then
+            webbrowserTrident.ScriptErrorsSuppressed = True
+        Else
+            webbrowserTrident.ScriptErrorsSuppressed = False
+        End If
 
-            ' If we're using GeckoFX, dock that browser and
-            ' add it to the tab page.
-            If My.Settings.browserEngine = "geckofx" Then
+        ' If we're using GeckoFX, dock that browser and
+        ' add it to the tab page.
+        If My.Settings.browserEngine = "geckofx" Then
             webbrowserGeckoFX.Dock = DockStyle.Fill
             tabNewTabPage.Controls.Add(webbrowserGeckoFX)
             ' Now, dispose Trident since we didn't use it.

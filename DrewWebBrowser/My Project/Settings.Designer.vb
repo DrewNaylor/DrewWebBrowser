@@ -69,9 +69,9 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property browserSuppressScriptErrors() As String
+        Public Property browserSuppressScriptErrors() As Boolean
             Get
-                Return CType(Me("browserSuppressScriptErrors"),String)
+                Return CType(Me("browserSuppressScriptErrors"),Boolean)
             End Get
             Set
                 Me("browserSuppressScriptErrors") = value
