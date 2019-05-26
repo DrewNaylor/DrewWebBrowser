@@ -12,7 +12,7 @@
       <Value Profile="(Default)">https://www.google.com</Value>
     </Setting>
     <Setting Name="browserEngine" Type="System.String" Scope="User">
-      <Value Profile="(Default)">geckofx</Value>
+      <Value Profile="(Default)">trident</Value>
     </Setting>
   </Settings>
 </SettingsFile>

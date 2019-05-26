@@ -63,19 +63,26 @@ Public Class NewTabWorker
                 webbrowserTrident.Navigate("about:blank")
             End If
         ElseIf My.Settings.browserBlankNewTab = False Then
-            webbrowserGeckoFX.Navigate(My.Settings.browserHomepage, CType(UriKind.Absolute, GeckoLoadFlags))
+            ' Navigate to the homepage in GeckoFX if that's what
+            ' we're using.
+            If My.Settings.browserEngine = "geckofx" Then
+                webbrowserGeckoFX.Navigate(My.Settings.browserHomepage)
+                ' Otherwise, just use IE/Trident.
+            Else
+                webbrowserTrident.Navigate(My.Settings.browserHomepage)
+            End If
         End If
 
-        ' Suppress script errors if the user wants to.
-        'If My.Settings.browserSuppressScriptErrors = True Then
-        '    browserNewBrowser.ScriptErrorsSuppressed = True
-        'Else
-        '    browserNewBrowser.ScriptErrorsSuppressed = False
-        'End If
+            ' Suppress script errors if the user wants to.
+            'If My.Settings.browserSuppressScriptErrors = True Then
+            '    browserNewBrowser.ScriptErrorsSuppressed = True
+            'Else
+            '    browserNewBrowser.ScriptErrorsSuppressed = False
+            'End If
 
-        ' If we're using GeckoFX, dock that browser and
-        ' add it to the tab page.
-        If My.Settings.browserEngine = "geckofx" Then
+            ' If we're using GeckoFX, dock that browser and
+            ' add it to the tab page.
+            If My.Settings.browserEngine = "geckofx" Then
             webbrowserGeckoFX.Dock = DockStyle.Fill
             tabNewTabPage.Controls.Add(webbrowserGeckoFX)
             ' Now, dispose Trident since we didn't use it.
