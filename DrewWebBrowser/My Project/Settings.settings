@@ -11,5 +11,8 @@
     <Setting Name="browserHomepage" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://www.google.com</Value>
     </Setting>
+    <Setting Name="browserEngine" Type="System.String" Scope="User">
+      <Value Profile="(Default)">geckofx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

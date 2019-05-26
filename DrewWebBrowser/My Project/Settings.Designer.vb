@@ -89,6 +89,18 @@ Namespace My
                 Me("browserHomepage") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("geckofx")>  _
+        Public Property browserEngine() As String
+            Get
+                Return CType(Me("browserEngine"),String)
+            End Get
+            Set
+                Me("browserEngine") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
