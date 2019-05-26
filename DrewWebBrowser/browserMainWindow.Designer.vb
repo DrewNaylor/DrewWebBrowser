@@ -47,6 +47,7 @@ Partial Class browserMainWindow
         Me.menubarHelp_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.tabcontrolWebBrowserView = New System.Windows.Forms.TabControl()
         Me.panelStatusBar = New System.Windows.Forms.StatusStrip()
+        Me.menuitemViewInTridentTab = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelMain.SuspendLayout()
         CType(Me.panelsplitWindowGlue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelsplitWindowGlue.Panel1.SuspendLayout()
@@ -203,7 +204,7 @@ Partial Class browserMainWindow
         '
         'menubarFile
         '
-        Me.menubarFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFile_Exit})
+        Me.menubarFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFile_Exit, Me.menuitemViewInTridentTab})
         Me.menubarFile.Name = "menubarFile"
         Me.menubarFile.Size = New System.Drawing.Size(44, 24)
         Me.menubarFile.Text = "&File"
@@ -212,7 +213,7 @@ Partial Class browserMainWindow
         '
         Me.menubarFile_Exit.Name = "menubarFile_Exit"
         Me.menubarFile_Exit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarFile_Exit.Size = New System.Drawing.Size(161, 26)
+        Me.menubarFile_Exit.Size = New System.Drawing.Size(257, 26)
         Me.menubarFile_Exit.Text = "E&xit"
         '
         'menubarView
@@ -305,6 +306,12 @@ Partial Class browserMainWindow
         Me.panelStatusBar.TabIndex = 8
         Me.panelStatusBar.Text = "StatusStrip1"
         '
+        'menuitemViewInTridentTab
+        '
+        Me.menuitemViewInTridentTab.Name = "menuitemViewInTridentTab"
+        Me.menuitemViewInTridentTab.Size = New System.Drawing.Size(257, 26)
+        Me.menuitemViewInTridentTab.Text = "View in new IE/Trident tab"
+        '
         'browserMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
@@ -353,4 +360,5 @@ Partial Class browserMainWindow
     Friend WithEvents tabcontrolWebBrowserView As TabControl
     Friend WithEvents buttonNewTab As Button
     Friend WithEvents buttonRemoveTab As Button
+    Friend WithEvents menuitemViewInTridentTab As ToolStripMenuItem
 End Class

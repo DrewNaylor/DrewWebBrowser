@@ -24,13 +24,13 @@ Imports Gecko
 
 Public Class NewTabWorker
 
-    Public Shared Sub tabAddMoreTabs()
+    Public Shared Sub tabAddMoreTabs(Optional useEngine As String = "geckofx")
         ' This SO answer is much better for tabbed browsing:
         ' http://stackoverflow.com/a/7459409
         ' Also this video
         ' https://www.youtube.com/watch?v=ZTTom7ML0ng
 
-        If My.Settings.browserEngine = "geckofx" Then
+        If My.Settings.browserEngine = "geckofx" Or useEngine = "geckofx" Then
             ' If the user wants to use GeckoFX,
             ' initialize Firefox.
             Xpcom.Initialize("Firefox")
@@ -57,7 +57,7 @@ Public Class NewTabWorker
         If My.Settings.browserBlankNewTab = True Then
             ' If we're using GeckoFX, use that instead of
             ' Trident (Internet Explorer).
-            If My.Settings.browserEngine = "geckofx" Then
+            If My.Settings.browserEngine = "geckofx" Or useEngine = "geckofx" Then
                 webbrowserGeckoFX.Navigate("about:blank")
             Else
                 webbrowserTrident.Navigate("about:blank")
@@ -65,7 +65,7 @@ Public Class NewTabWorker
         ElseIf My.Settings.browserBlankNewTab = False Then
             ' Navigate to the homepage in GeckoFX if that's what
             ' we're using.
-            If My.Settings.browserEngine = "geckofx" Then
+            If My.Settings.browserEngine = "geckofx" Or useEngine = "geckofx" Then
                 webbrowserGeckoFX.Navigate(My.Settings.browserHomepage)
                 ' Otherwise, just use IE/Trident.
             Else
@@ -82,7 +82,7 @@ Public Class NewTabWorker
 
         ' If we're using GeckoFX, dock that browser and
         ' add it to the tab page.
-        If My.Settings.browserEngine = "geckofx" Then
+        If My.Settings.browserEngine = "geckofx" And useEngine IsNot "trident" Or useEngine = "geckofx" Then
             webbrowserGeckoFX.Dock = DockStyle.Fill
             tabNewTabPage.Controls.Add(webbrowserGeckoFX)
             ' Now, dispose Trident since we didn't use it.

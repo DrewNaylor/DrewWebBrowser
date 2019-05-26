@@ -181,4 +181,9 @@ Public Class browserMainWindow
     Private Sub buttonNewTab_Click(sender As Object, e As EventArgs) Handles buttonNewTab.Click
         NewTabWorker.tabAddMoreTabs()
     End Sub
+
+    Private Sub menuitemViewInTridentTab_Click(sender As Object, e As EventArgs) Handles menuitemViewInTridentTab.Click
+        NewTabWorker.tabAddMoreTabs("trident")
+        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Navigate(Me.urlBox.Text)
+    End Sub
 End Class
