@@ -56,7 +56,12 @@ Public Class browserMainWindow
 
     ' Refresh button (Address Bar)
     Private Sub buttonReload_Click(sender As System.Object, e As System.EventArgs) Handles buttonReload.Click
+        ' Code moved to its own sub.
+        navRefresh()
+    End Sub
 
+    ' Refresh
+    Private Sub navRefresh()
         ' Work with GeckoFX if that's being used.
         If getEngine() = "geckofx" Then
             CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Reload()
@@ -102,8 +107,8 @@ Public Class browserMainWindow
 
     ' Go Back (Menubar)
     Private Sub menubarView_GoToMenu_Back_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Back.Click
-
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoBack()
+        ' Code moved to its own sub.
+        navGoBack()
     End Sub
 
     ' Go Forward (Menubar)
