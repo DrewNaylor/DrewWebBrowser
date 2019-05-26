@@ -72,8 +72,17 @@ Public Class NewTabWorker
         'Else
         '    browserNewBrowser.ScriptErrorsSuppressed = False
         'End If
-        browserNewBrowser.Dock = DockStyle.Fill
-        tabNewTabPage.Controls.Add(browserNewBrowser)
+
+        ' If we're using GeckoFX, dock that browser and
+        ' add it to the tab page.
+        If My.Settings.browserEngine = "geckofx" Then
+            webbrowserGeckoFX.Dock = DockStyle.Fill
+            tabNewTabPage.Controls.Add(webbrowserGeckoFX)
+        Else
+            ' Otherwise, just use Trident.
+            webbrowserTrident.Dock = DockStyle.Fill
+            tabNewTabPage.Controls.Add(webbrowserTrident)
+        End If
         'tabNewTabPage.Text = browserNewBrowser.DocumentTitle
     End Sub
 End Class
