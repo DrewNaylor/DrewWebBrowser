@@ -135,8 +135,8 @@ Public Class browserMainWindow
 
     ' Go Forward (Menubar)
     Private Sub menubarView_GoToMenu_Forward_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_GoToMenu_Forward.Click
-
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoForward()
+        ' Code moved to its own sub.
+        navGoForward()
     End Sub
 
     ' Go to Home Page (Menubar)
@@ -153,8 +153,8 @@ Public Class browserMainWindow
 
     ' Stop Navigation (Menubar)
     Private Sub menubarView_Stop_Click(sender As System.Object, e As System.EventArgs) Handles menubarView_Stop.Click
-
-        CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Stop()
+        ' Code moved to its own sub.
+        navStop()
     End Sub
 
 
