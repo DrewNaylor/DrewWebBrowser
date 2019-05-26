@@ -66,9 +66,14 @@ Public Class browserMainWindow
         End If
     End Sub
 
-    ' Go Back (Address Bar)
+    ' Go Back button.
     Private Sub buttonBack_Click(sender As System.Object, e As System.EventArgs) Handles buttonBack.Click
+        ' Code moved to its own sub to reduce duplication.
+        navGoBack()
+    End Sub
 
+    ' Go back
+    Private Sub navGoBack()
         ' If we're working with GeckoFX, use it.
         If getEngine() = "geckofx" Then
             CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoBack()
@@ -80,7 +85,7 @@ Public Class browserMainWindow
 
     ' Go Forward (Address Bar)
     Private Sub forwardButton_Click(sender As System.Object, e As System.EventArgs) Handles forwardButton.Click
-
+        ' 
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).GoForward()
     End Sub
 
@@ -124,6 +129,8 @@ Public Class browserMainWindow
 
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Stop()
     End Sub
+
+
 
     ' Open the About Dialogue (Menubar)
     Private Sub menubarHelp_About_Click(sender As System.Object, e As System.EventArgs) Handles menubarHelp_About.Click
