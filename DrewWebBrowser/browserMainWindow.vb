@@ -186,4 +186,14 @@ Public Class browserMainWindow
         NewTabWorker.tabAddMoreTabs("trident")
         CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Navigate(Me.urlBox.Text)
     End Sub
+
+    Private Sub UpdateURLFromCurrentTabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateURLFromCurrentTabToolStripMenuItem.Click
+        ' Changes the URL box text to the browser's current URL for IE tabs.
+        Me.urlBox.Text = CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), WebBrowser).Url.ToString
+    End Sub
+
+    Private Sub UpdateURLFromCurrentTabGeckoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateURLFromCurrentTabGeckoToolStripMenuItem.Click
+        ' Changes the URL box text to the browser's current URL for IE tabs.
+        Me.urlBox.Text = CType(tabcontrolWebBrowserView.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString
+    End Sub
 End Class

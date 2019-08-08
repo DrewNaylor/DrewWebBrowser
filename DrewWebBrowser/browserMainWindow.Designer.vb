@@ -48,6 +48,8 @@ Partial Class browserMainWindow
         Me.menubarHelp_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.tabcontrolWebBrowserView = New System.Windows.Forms.TabControl()
         Me.panelStatusBar = New System.Windows.Forms.StatusStrip()
+        Me.UpdateURLFromCurrentTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpdateURLFromCurrentTabGeckoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelMain.SuspendLayout()
         CType(Me.panelsplitWindowGlue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelsplitWindowGlue.Panel1.SuspendLayout()
@@ -213,7 +215,7 @@ Partial Class browserMainWindow
         '
         'menubarView
         '
-        Me.menubarView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarView_GoToMenu, Me.menubarView_Stop, Me.menubarView_Refresh})
+        Me.menubarView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarView_GoToMenu, Me.menubarView_Stop, Me.menubarView_Refresh, Me.UpdateURLFromCurrentTabToolStripMenuItem, Me.UpdateURLFromCurrentTabGeckoToolStripMenuItem})
         Me.menubarView.Name = "menubarView"
         Me.menubarView.Size = New System.Drawing.Size(44, 20)
         Me.menubarView.Text = "&View"
@@ -299,6 +301,18 @@ Partial Class browserMainWindow
         Me.panelStatusBar.TabIndex = 8
         Me.panelStatusBar.Text = "StatusStrip1"
         '
+        'UpdateURLFromCurrentTabToolStripMenuItem
+        '
+        Me.UpdateURLFromCurrentTabToolStripMenuItem.Name = "UpdateURLFromCurrentTabToolStripMenuItem"
+        Me.UpdateURLFromCurrentTabToolStripMenuItem.Size = New System.Drawing.Size(288, 22)
+        Me.UpdateURLFromCurrentTabToolStripMenuItem.Text = "Update URL from current tab (IE/Trident)"
+        '
+        'UpdateURLFromCurrentTabGeckoToolStripMenuItem
+        '
+        Me.UpdateURLFromCurrentTabGeckoToolStripMenuItem.Name = "UpdateURLFromCurrentTabGeckoToolStripMenuItem"
+        Me.UpdateURLFromCurrentTabGeckoToolStripMenuItem.Size = New System.Drawing.Size(288, 22)
+        Me.UpdateURLFromCurrentTabGeckoToolStripMenuItem.Text = "Update URL from current tab (Gecko)"
+        '
         'browserMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -347,4 +361,6 @@ Partial Class browserMainWindow
     Friend WithEvents buttonNewTab As Button
     Friend WithEvents buttonRemoveTab As Button
     Friend WithEvents menuitemViewInTridentTab As ToolStripMenuItem
+    Friend WithEvents UpdateURLFromCurrentTabToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UpdateURLFromCurrentTabGeckoToolStripMenuItem As ToolStripMenuItem
 End Class
