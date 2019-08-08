@@ -35,6 +35,7 @@ Partial Class browserMainWindow
         Me.menubarAContainer = New System.Windows.Forms.MenuStrip()
         Me.menubarFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarFile_Exit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemViewInTridentTab = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarView = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarView_GoToMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarView_GoToMenu_Back = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,7 +48,6 @@ Partial Class browserMainWindow
         Me.menubarHelp_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.tabcontrolWebBrowserView = New System.Windows.Forms.TabControl()
         Me.panelStatusBar = New System.Windows.Forms.StatusStrip()
-        Me.menuitemViewInTridentTab = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelMain.SuspendLayout()
         CType(Me.panelsplitWindowGlue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelsplitWindowGlue.Panel1.SuspendLayout()
@@ -61,9 +61,8 @@ Partial Class browserMainWindow
         Me.panelMain.Controls.Add(Me.panelsplitWindowGlue)
         Me.panelMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelMain.Location = New System.Drawing.Point(0, 0)
-        Me.panelMain.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelMain.Name = "panelMain"
-        Me.panelMain.Size = New System.Drawing.Size(1260, 702)
+        Me.panelMain.Size = New System.Drawing.Size(1008, 562)
         Me.panelMain.TabIndex = 0
         '
         'panelsplitWindowGlue
@@ -71,8 +70,7 @@ Partial Class browserMainWindow
         Me.panelsplitWindowGlue.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelsplitWindowGlue.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.panelsplitWindowGlue.Location = New System.Drawing.Point(0, 0)
-        Me.panelsplitWindowGlue.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.panelsplitWindowGlue.MinimumSize = New System.Drawing.Size(990, 679)
+        Me.panelsplitWindowGlue.MinimumSize = New System.Drawing.Size(792, 543)
         Me.panelsplitWindowGlue.Name = "panelsplitWindowGlue"
         Me.panelsplitWindowGlue.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -93,27 +91,25 @@ Partial Class browserMainWindow
         '
         Me.panelsplitWindowGlue.Panel2.Controls.Add(Me.tabcontrolWebBrowserView)
         Me.panelsplitWindowGlue.Panel2.Controls.Add(Me.panelStatusBar)
-        Me.panelsplitWindowGlue.Size = New System.Drawing.Size(1260, 702)
+        Me.panelsplitWindowGlue.Size = New System.Drawing.Size(1008, 562)
         Me.panelsplitWindowGlue.SplitterDistance = 67
         Me.panelsplitWindowGlue.SplitterWidth = 1
         Me.panelsplitWindowGlue.TabIndex = 2
         '
         'buttonRemoveTab
         '
-        Me.buttonRemoveTab.Location = New System.Drawing.Point(278, 4)
-        Me.buttonRemoveTab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.buttonRemoveTab.Location = New System.Drawing.Point(222, 3)
         Me.buttonRemoveTab.Name = "buttonRemoveTab"
-        Me.buttonRemoveTab.Size = New System.Drawing.Size(114, 29)
+        Me.buttonRemoveTab.Size = New System.Drawing.Size(91, 23)
         Me.buttonRemoveTab.TabIndex = 9
         Me.buttonRemoveTab.Text = "Remove Tab"
         Me.buttonRemoveTab.UseVisualStyleBackColor = True
         '
         'buttonNewTab
         '
-        Me.buttonNewTab.Location = New System.Drawing.Point(176, 4)
-        Me.buttonNewTab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.buttonNewTab.Location = New System.Drawing.Point(141, 3)
         Me.buttonNewTab.Name = "buttonNewTab"
-        Me.buttonNewTab.Size = New System.Drawing.Size(94, 29)
+        Me.buttonNewTab.Size = New System.Drawing.Size(75, 23)
         Me.buttonNewTab.TabIndex = 8
         Me.buttonNewTab.Text = "New Tab"
         Me.buttonNewTab.UseVisualStyleBackColor = True
@@ -122,10 +118,9 @@ Partial Class browserMainWindow
         '
         Me.forwardButton.AutoSize = True
         Me.forwardButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.forwardButton.Location = New System.Drawing.Point(64, 38)
-        Me.forwardButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.forwardButton.Location = New System.Drawing.Point(51, 30)
         Me.forwardButton.Name = "forwardButton"
-        Me.forwardButton.Size = New System.Drawing.Size(69, 27)
+        Me.forwardButton.Size = New System.Drawing.Size(55, 23)
         Me.forwardButton.TabIndex = 2
         Me.forwardButton.Text = "Forward"
         Me.forwardButton.UseVisualStyleBackColor = True
@@ -134,10 +129,9 @@ Partial Class browserMainWindow
         '
         Me.buttonStopLoading.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.buttonStopLoading.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonStopLoading.Location = New System.Drawing.Point(1210, 36)
-        Me.buttonStopLoading.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.buttonStopLoading.Location = New System.Drawing.Point(968, 29)
         Me.buttonStopLoading.Name = "buttonStopLoading"
-        Me.buttonStopLoading.Size = New System.Drawing.Size(46, 30)
+        Me.buttonStopLoading.Size = New System.Drawing.Size(37, 24)
         Me.buttonStopLoading.TabIndex = 6
         Me.buttonStopLoading.Text = "Stop"
         Me.buttonStopLoading.UseVisualStyleBackColor = True
@@ -146,10 +140,9 @@ Partial Class browserMainWindow
         '
         Me.buttonReload.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.buttonReload.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonReload.Location = New System.Drawing.Point(1132, 37)
-        Me.buttonReload.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.buttonReload.Location = New System.Drawing.Point(906, 30)
         Me.buttonReload.Name = "buttonReload"
-        Me.buttonReload.Size = New System.Drawing.Size(62, 28)
+        Me.buttonReload.Size = New System.Drawing.Size(50, 22)
         Me.buttonReload.TabIndex = 3
         Me.buttonReload.Text = "Reload"
         Me.buttonReload.UseVisualStyleBackColor = True
@@ -158,10 +151,9 @@ Partial Class browserMainWindow
         '
         Me.buttonBack.AutoSize = True
         Me.buttonBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonBack.Location = New System.Drawing.Point(4, 38)
-        Me.buttonBack.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.buttonBack.Location = New System.Drawing.Point(3, 30)
         Me.buttonBack.Name = "buttonBack"
-        Me.buttonBack.Size = New System.Drawing.Size(49, 27)
+        Me.buttonBack.Size = New System.Drawing.Size(42, 23)
         Me.buttonBack.TabIndex = 1
         Me.buttonBack.Text = "Back"
         Me.buttonBack.UseVisualStyleBackColor = True
@@ -170,10 +162,9 @@ Partial Class browserMainWindow
         '
         Me.goButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.goButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.goButton.Location = New System.Drawing.Point(1088, 38)
-        Me.goButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.goButton.Location = New System.Drawing.Point(870, 30)
         Me.goButton.Name = "goButton"
-        Me.goButton.Size = New System.Drawing.Size(36, 27)
+        Me.goButton.Size = New System.Drawing.Size(29, 22)
         Me.goButton.TabIndex = 5
         Me.goButton.Text = "Go"
         Me.goButton.UseVisualStyleBackColor = True
@@ -185,10 +176,9 @@ Partial Class browserMainWindow
         Me.urlBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.urlBox.FormattingEnabled = True
         Me.urlBox.Items.AddRange(New Object() {"bing.com", "google.com", "facebook.com", "outlook.com", "momandpophops.com"})
-        Me.urlBox.Location = New System.Drawing.Point(140, 40)
-        Me.urlBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.urlBox.Location = New System.Drawing.Point(112, 32)
         Me.urlBox.Name = "urlBox"
-        Me.urlBox.Size = New System.Drawing.Size(939, 24)
+        Me.urlBox.Size = New System.Drawing.Size(752, 21)
         Me.urlBox.TabIndex = 4
         '
         'menubarAContainer
@@ -197,8 +187,7 @@ Partial Class browserMainWindow
         Me.menubarAContainer.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFile, Me.menubarView, Me.menubarHelp})
         Me.menubarAContainer.Location = New System.Drawing.Point(0, 0)
         Me.menubarAContainer.Name = "menubarAContainer"
-        Me.menubarAContainer.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.menubarAContainer.Size = New System.Drawing.Size(1260, 28)
+        Me.menubarAContainer.Size = New System.Drawing.Size(1008, 24)
         Me.menubarAContainer.TabIndex = 7
         Me.menubarAContainer.Text = "MenuStrip1"
         '
@@ -206,55 +195,61 @@ Partial Class browserMainWindow
         '
         Me.menubarFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFile_Exit, Me.menuitemViewInTridentTab})
         Me.menubarFile.Name = "menubarFile"
-        Me.menubarFile.Size = New System.Drawing.Size(44, 24)
+        Me.menubarFile.Size = New System.Drawing.Size(37, 20)
         Me.menubarFile.Text = "&File"
         '
         'menubarFile_Exit
         '
         Me.menubarFile_Exit.Name = "menubarFile_Exit"
         Me.menubarFile_Exit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarFile_Exit.Size = New System.Drawing.Size(257, 26)
+        Me.menubarFile_Exit.Size = New System.Drawing.Size(251, 22)
         Me.menubarFile_Exit.Text = "E&xit"
+        '
+        'menuitemViewInTridentTab
+        '
+        Me.menuitemViewInTridentTab.Name = "menuitemViewInTridentTab"
+        Me.menuitemViewInTridentTab.Size = New System.Drawing.Size(251, 22)
+        Me.menuitemViewInTridentTab.Text = "View in new IE/Trident tab (GO IE)"
         '
         'menubarView
         '
         Me.menubarView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarView_GoToMenu, Me.menubarView_Stop, Me.menubarView_Refresh})
         Me.menubarView.Name = "menubarView"
-        Me.menubarView.Size = New System.Drawing.Size(53, 24)
+        Me.menubarView.Size = New System.Drawing.Size(44, 20)
         Me.menubarView.Text = "&View"
         '
         'menubarView_GoToMenu
         '
         Me.menubarView_GoToMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarView_GoToMenu_Back, Me.menubarView_GoToMenu_Forward, Me.menubarZSeperator1, Me.menubarView_GoToMenu_HomePage})
         Me.menubarView_GoToMenu.Name = "menubarView_GoToMenu"
-        Me.menubarView_GoToMenu.Size = New System.Drawing.Size(205, 26)
+        Me.menubarView_GoToMenu.Size = New System.Drawing.Size(170, 22)
         Me.menubarView_GoToMenu.Text = "&Go to"
         '
         'menubarView_GoToMenu_Back
         '
         Me.menubarView_GoToMenu_Back.Name = "menubarView_GoToMenu_Back"
         Me.menubarView_GoToMenu_Back.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.Left), System.Windows.Forms.Keys)
-        Me.menubarView_GoToMenu_Back.Size = New System.Drawing.Size(257, 26)
+        Me.menubarView_GoToMenu_Back.Size = New System.Drawing.Size(213, 22)
         Me.menubarView_GoToMenu_Back.Text = "&Back"
         '
         'menubarView_GoToMenu_Forward
         '
         Me.menubarView_GoToMenu_Forward.Name = "menubarView_GoToMenu_Forward"
         Me.menubarView_GoToMenu_Forward.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.Right), System.Windows.Forms.Keys)
-        Me.menubarView_GoToMenu_Forward.Size = New System.Drawing.Size(257, 26)
+        Me.menubarView_GoToMenu_Forward.Size = New System.Drawing.Size(213, 22)
         Me.menubarView_GoToMenu_Forward.Text = "&Forward"
         '
         'menubarZSeperator1
         '
         Me.menubarZSeperator1.Name = "menubarZSeperator1"
-        Me.menubarZSeperator1.Size = New System.Drawing.Size(254, 6)
+        Me.menubarZSeperator1.Size = New System.Drawing.Size(210, 6)
         '
         'menubarView_GoToMenu_HomePage
         '
         Me.menubarView_GoToMenu_HomePage.Name = "menubarView_GoToMenu_HomePage"
         Me.menubarView_GoToMenu_HomePage.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.[End]), System.Windows.Forms.Keys)
-        Me.menubarView_GoToMenu_HomePage.Size = New System.Drawing.Size(257, 26)
+        Me.menubarView_GoToMenu_HomePage.Size = New System.Drawing.Size(213, 22)
         Me.menubarView_GoToMenu_HomePage.Text = "&Home Page"
         '
         'menubarView_Stop
@@ -262,65 +257,56 @@ Partial Class browserMainWindow
         Me.menubarView_Stop.Name = "menubarView_Stop"
         Me.menubarView_Stop.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.menubarView_Stop.Size = New System.Drawing.Size(205, 26)
+        Me.menubarView_Stop.Size = New System.Drawing.Size(170, 22)
         Me.menubarView_Stop.Text = "Sto&p"
         '
         'menubarView_Refresh
         '
         Me.menubarView_Refresh.Name = "menubarView_Refresh"
         Me.menubarView_Refresh.ShortcutKeys = System.Windows.Forms.Keys.F5
-        Me.menubarView_Refresh.Size = New System.Drawing.Size(205, 26)
+        Me.menubarView_Refresh.Size = New System.Drawing.Size(170, 22)
         Me.menubarView_Refresh.Text = "&Refresh"
         '
         'menubarHelp
         '
         Me.menubarHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelp_About})
         Me.menubarHelp.Name = "menubarHelp"
-        Me.menubarHelp.Size = New System.Drawing.Size(53, 24)
+        Me.menubarHelp.Size = New System.Drawing.Size(44, 20)
         Me.menubarHelp.Text = "Help"
         '
         'menubarHelp_About
         '
         Me.menubarHelp_About.Name = "menubarHelp_About"
-        Me.menubarHelp_About.Size = New System.Drawing.Size(125, 26)
+        Me.menubarHelp_About.Size = New System.Drawing.Size(107, 22)
         Me.menubarHelp_About.Text = "About"
         '
         'tabcontrolWebBrowserView
         '
         Me.tabcontrolWebBrowserView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabcontrolWebBrowserView.Location = New System.Drawing.Point(0, 0)
-        Me.tabcontrolWebBrowserView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabcontrolWebBrowserView.Name = "tabcontrolWebBrowserView"
         Me.tabcontrolWebBrowserView.SelectedIndex = 0
-        Me.tabcontrolWebBrowserView.Size = New System.Drawing.Size(1260, 612)
+        Me.tabcontrolWebBrowserView.Size = New System.Drawing.Size(1008, 472)
         Me.tabcontrolWebBrowserView.TabIndex = 8
         '
         'panelStatusBar
         '
         Me.panelStatusBar.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.panelStatusBar.Location = New System.Drawing.Point(0, 612)
-        Me.panelStatusBar.Margin = New System.Windows.Forms.Padding(0, 0, 0, 6)
+        Me.panelStatusBar.Location = New System.Drawing.Point(0, 472)
+        Me.panelStatusBar.Margin = New System.Windows.Forms.Padding(0, 0, 0, 5)
         Me.panelStatusBar.Name = "panelStatusBar"
-        Me.panelStatusBar.Padding = New System.Windows.Forms.Padding(1, 0, 18, 0)
-        Me.panelStatusBar.Size = New System.Drawing.Size(1260, 22)
+        Me.panelStatusBar.Size = New System.Drawing.Size(1008, 22)
         Me.panelStatusBar.TabIndex = 8
         Me.panelStatusBar.Text = "StatusStrip1"
         '
-        'menuitemViewInTridentTab
-        '
-        Me.menuitemViewInTridentTab.Name = "menuitemViewInTridentTab"
-        Me.menuitemViewInTridentTab.Size = New System.Drawing.Size(257, 26)
-        Me.menuitemViewInTridentTab.Text = "View in new IE/Trident tab"
-        '
         'browserMainWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(1260, 702)
+        Me.ClientSize = New System.Drawing.Size(1008, 562)
         Me.Controls.Add(Me.panelMain)
         Me.MainMenuStrip = Me.menubarAContainer
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.MinimumSize = New System.Drawing.Size(620, 363)
+        Me.MinimumSize = New System.Drawing.Size(499, 298)
         Me.Name = "browserMainWindow"
         Me.Text = "Drew's Lightweight Browser v. 0.3 [ALPHA]"
         Me.panelMain.ResumeLayout(False)
