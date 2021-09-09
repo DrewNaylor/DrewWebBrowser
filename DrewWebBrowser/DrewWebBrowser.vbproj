@@ -17,6 +17,8 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>C:\DrewN\Apps\DrewsLightweightBrowser\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -34,8 +36,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -95,13 +95,11 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Geckofx-Core, Version=60.0.26.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
-      <HintPath>..\packages\Geckofx60.32.60.0.26\lib\net45\Geckofx-Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Geckofx-Core, Version=60.0.55.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
+      <HintPath>..\packages\Geckofx60.32.60.0.55\lib\net45\Geckofx-Core.dll</HintPath>
     </Reference>
-    <Reference Include="Geckofx-Winforms, Version=60.0.26.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
-      <HintPath>..\packages\Geckofx60.32.60.0.26\lib\net45\Geckofx-Winforms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Geckofx-Winforms, Version=60.0.55.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
+      <HintPath>..\packages\Geckofx60.32.60.0.55\lib\net45\Geckofx-Winforms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -171,7 +169,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\omni.ja">
+    <None Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\omni.ja">
       <Link>Firefox\omni.ja</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -223,94 +221,94 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\AccessibleHandler.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\AccessibleHandler.dll">
       <Link>Firefox\AccessibleHandler.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\AccessibleMarshal.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\AccessibleMarshal.dll">
       <Link>Firefox\AccessibleMarshal.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\breakpadinjector.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\breakpadinjector.dll">
       <Link>Firefox\breakpadinjector.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\d3dcompiler_47.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\d3dcompiler_47.dll">
       <Link>Firefox\d3dcompiler_47.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\freebl3.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\freebl3.dll">
       <Link>Firefox\freebl3.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\IA2Marshal.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\IA2Marshal.dll">
       <Link>Firefox\IA2Marshal.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\lgpllibs.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\lgpllibs.dll">
       <Link>Firefox\lgpllibs.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\libEGL.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\libEGL.dll">
       <Link>Firefox\libEGL.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\libGLESv2.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\libGLESv2.dll">
       <Link>Firefox\libGLESv2.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\mozavcodec.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\mozavcodec.dll">
       <Link>Firefox\mozavcodec.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\mozavutil.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\mozavutil.dll">
       <Link>Firefox\mozavutil.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\mozglue.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\mozglue.dll">
       <Link>Firefox\mozglue.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\nss3.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\nss3.dll">
       <Link>Firefox\nss3.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\nssckbi.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\nssckbi.dll">
       <Link>Firefox\nssckbi.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\nssdbm3.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\nssdbm3.dll">
       <Link>Firefox\nssdbm3.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\plugin-container.exe">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\plugin-container.exe">
       <Link>Firefox\plugin-container.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\plugin-hang-ui.exe">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\plugin-hang-ui.exe">
       <Link>Firefox\plugin-hang-ui.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\qipcap.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\qipcap.dll">
       <Link>Firefox\qipcap.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\softokn3.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\softokn3.dll">
       <Link>Firefox\softokn3.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Geckofx60.32.60.0.26\content\Firefox\xul.dll">
+    <Content Include="..\packages\Geckofx60.32.60.0.55\content\Firefox\xul.dll">
       <Link>Firefox\xul.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="..\packages\Geckofx60.32.60.0.26\build\Geckofx60.32.targets" Condition="Exists('..\packages\Geckofx60.32.60.0.26\build\Geckofx60.32.targets')" />
+  <Import Project="..\packages\Geckofx60.32.60.0.55\build\Geckofx60.32.targets" Condition="Exists('..\packages\Geckofx60.32.60.0.55\build\Geckofx60.32.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Geckofx60.32.60.0.26\build\Geckofx60.32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Geckofx60.32.60.0.26\build\Geckofx60.32.targets'))" />
+    <Error Condition="!Exists('..\packages\Geckofx60.32.60.0.55\build\Geckofx60.32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Geckofx60.32.60.0.55\build\Geckofx60.32.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
