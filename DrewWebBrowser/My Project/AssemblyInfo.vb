@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Browse the Web with a Lightweight Browser! Licensed under Gnu GPL v3+. (Not recommended for everyday use.)")>
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("Drew's Lightweight Browser")>
-<Assembly: AssemblyCopyright("Copyright (C) 2015-2017 Drew Naylor. Gnu GPL v3+.")>
+<Assembly: AssemblyCopyright("Copyright (C) 2015-2017, 2019, 2021 Drew Naylor. Licensed under the Gnu GPL v3+.")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

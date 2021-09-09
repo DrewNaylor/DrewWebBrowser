@@ -1,5 +1,5 @@
 ﻿'Drew's Lightweight Browser - Browse the Web with a Lightweight Browser! (Not recommended for everyday use.)
-'Copyright (C) 2015-2017  Drew Naylor
+'Copyright (C) 2015-2017, 2019, 2021 Drew Naylor
 '(Note that the copyright years include the years left out by the hyphen.)
 '
 'This file is part of Drew's Lightweight Browser
