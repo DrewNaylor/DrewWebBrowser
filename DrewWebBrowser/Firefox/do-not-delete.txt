@@ -1,0 +1,1 @@
+This folder needs to stay here as it's used in the Solution Explorer for shortcuts to the Firefox libraries.
